@@ -1,4 +1,6 @@
 language: bash
 
+sudo: true
+
 script:
-  - ./install.sh
+  - chmod +x ./install.sh && ./install.sh

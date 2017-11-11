@@ -2,5 +2,11 @@ language: bash
 
 sudo: true
 
+matrix:
+  include:
+    - os: linux
+    dist: xenial
+    sudo: required
+
 script:
   - chmod +x ./install.sh && sudo ./install.sh

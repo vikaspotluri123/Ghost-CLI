@@ -22,7 +22,7 @@ notes_mysql-server () {
   echo -e "${YELLOW}You will need to create a root pasword for MySQL. The password should be random";
   echo -e "  and contain a mix of alphanumeric characters and symbols. If you need help";
   echo -e "  creating a password, you can use one from https://randomkeygen.com${NC}";
-  read -p "Press [Enter] to to contine";
+  #read -p "Press [Enter] to to contine";
 }
 
 ##
@@ -163,7 +163,7 @@ install_cli() {
 
 run_cli() {
   INSTALL_GHOST="Y"
-  read -p "$(echo -e ${YELLOW})Do you want to install ghost? [Y/n] $(echo -e ${NC})" INSTALL_GHOST
+  #read -p "$(echo -e ${YELLOW})Do you want to install ghost? [Y/n] $(echo -e ${NC})" INSTALL_GHOST
   if [ "$INSTALL_GHOST" = "Y" ] || [ "$INSTALL_GHOST" = "y" ]; then
     echo -e "${CYAN}  Installing ghost to /var/www/ghost${NC}";
     mkdir -p /var/www/ghost

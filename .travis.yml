@@ -1,31 +1,4 @@
-language: node_js
-
-node_js:
-  - "4"
-  - "6"
-  - "8"
-
-sudo: false
-
-matrix:
-  include:
-    - node_js: "4"
-      env: TEST_SUITE=lint
-
-branches:
-  except:
-    - /^greenkeeper-.+$/
-
-cache:
-  directories:
-    - node_modules
-
-install:
-  - yarn
-  - yarn add --force sqlite3 # fix sqlite caching issues
+language: bash
 
 script:
-  - if [ "$TEST_SUITE" == "lint" ]; then yarn run lint; else yarn run test:all; fi
-
-after_success:
-  - if [[ "$TRAVIS_NODE_VERSION" == "4" && "$TEST_SUITE" != "lint" ]]; then yarn run coverage; ./install.sh fi
+  - install.sh

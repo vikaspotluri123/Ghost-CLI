@@ -174,9 +174,8 @@ run_cli() {
 
 
 # @todo: support for skipping steps
-#check_root
-#check_os
-#install_packages
-#install_cli
-#run_cli
-install_status
+check_root
+check_os
+install_packages
+install_cli
+run_cli

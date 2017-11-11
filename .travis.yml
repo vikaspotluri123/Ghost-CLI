@@ -1,4 +1,4 @@
 language: bash
 
 script:
-  - install.sh
+  - ./install.sh

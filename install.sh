@@ -15,6 +15,7 @@ NC='\033[0m'
 CYAN='\033[0;36m'
 YELLOW='\033[0;33m'
 NODE_INSTALL="6"
+OS_VERSION="16"
 IS_INSTALLED="install ok installed"
 PACKAGES=('mysql-server' 'nginx-core' nodejs)
 
@@ -47,8 +48,8 @@ check_os() {
   # We only care about the major version of the release
   VERSION=$(cat /etc/os-release | grep ^VERSION_ID | cut -d \" -f 2 | cut -d \. -f 1)
 
-  if [ "$OS" != "Ubuntu" ] || [ "$VERSION" != "14" ]; then
-    echo "WARNING: Ghost offically supports Ubuntu 16.";
+  if [ "$OS" != "Ubuntu" ] || [ "$VERSION" != "$OS_VERSION" ]; then
+    echo "WARNING: Ghost offically supports Ubuntu ${OS_VERSION}.";
     echo "Using another OS may or may not work.";
     echo "Your OS is $OS $VERSION";
     exit 1;

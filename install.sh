@@ -1,3 +1,5 @@
+#! /bin/bash
+
 ##########################################################
 #                                                        #
 #      Ghost System-Dependency Verification Script       #
@@ -5,7 +7,6 @@
 #         Influenced by Docker-install & ACME.sh         #
 ##########################################################
 
-#! /bin/bash
 
 # set -e
 
@@ -15,7 +16,7 @@ CYAN='\033[0;36m'
 YELLOW='\033[0;33m'
 NODE_INSTALL="6"
 IS_INSTALLED="install ok installed"
-PACKAGES=('mysql-server' nignx nodejs)
+PACKAGES=('mysql-server' nginx nodejs)
 
 notes_mysql-server () {
   echo -e "${YELLOW}You will need to create a root pasword for MySQL. The password should be random";

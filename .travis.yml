@@ -3,4 +3,4 @@ language: bash
 sudo: true
 
 script:
-  - chmod +x ./install.sh && ./install.sh
+  - chmod +x ./install.sh && sudo ./install.sh

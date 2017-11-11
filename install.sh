@@ -16,7 +16,7 @@ CYAN='\033[0;36m'
 YELLOW='\033[0;33m'
 NODE_INSTALL="6"
 IS_INSTALLED="install ok installed"
-PACKAGES=('mysql-server' nginx nodejs)
+PACKAGES=('mysql-server' 'nginx-core' nodejs)
 
 notes_mysql-server () {
   echo -e "${YELLOW}You will need to create a root pasword for MySQL. The password should be random";
@@ -47,7 +47,7 @@ check_os() {
   # We only care about the major version of the release
   VERSION=$(cat /etc/os-release | grep ^VERSION_ID | cut -d \" -f 2 | cut -d \. -f 1)
 
-  if [ "$OS" != "Ubuntu" ] || [ "$VERSION" != "16" ]; then
+  if [ "$OS" != "Ubuntu" ] || [ "$VERSION" != "14" ]; then
     echo "WARNING: Ghost offically supports Ubuntu 16.";
     echo "Using another OS may or may not work.";
     echo "Your OS is $OS $VERSION";

@@ -22,5 +22,7 @@ ratings:
   - "**.php"
   - "**.py"
   - "**.rb"
-exclude_paths:
-- test/
+exclude_patterns:
+- "**/spec-*.js"
+- "**/*-spec.js"
+- test/**/*

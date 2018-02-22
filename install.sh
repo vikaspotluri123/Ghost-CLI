@@ -23,7 +23,7 @@ notes_mysql-server () {
   echo -e "${YELLOW}You will need to create a root pasword for MySQL. The password should be random";
   echo -e "  and contain a mix of alphanumeric characters and symbols. If you need help";
   echo -e "  creating a password, you can use one from https://randomkeygen.com${NC}";
-  #read -p "Press [Enter] to to contine";
+  read -p "Press [Enter] to to contine";
 }
 
 ##

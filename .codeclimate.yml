@@ -13,6 +13,11 @@ engines:
     channel: "eslint-4"
   fixme:
     enabled: true
+checks:
+  file-lines:
+    enabled: false
+  method-lines:
+    enabled: false
 ratings:
   paths:
   - "**.inc"

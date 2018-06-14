@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/TryGhost/Ghost-CLI/badge.svg?branch=master)](https://coveralls.io/github/TryGhost/Ghost-CLI?branch=master)
 [![npm version](https://img.shields.io/npm/v/ghost-cli.svg)](https://npmjs.com/package/ghost-cli/)
 [![ghost-cli dependencies](https://david-dm.org/TryGhost/Ghost-CLI.svg)](https://david-dm.org/TryGhost/Ghost-CLI)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvikaspotluri123%2FGhost-CLI.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvikaspotluri123%2FGhost-CLI?ref=badge_shield)
 
 ## Basic Setup
 
@@ -89,3 +90,6 @@ The npm version of ghost-cli <= 0.0.2 can be found [here](https://github.com/jef
 # Copyright & License
 
 Copyright (c) 2016-2018 Ghost Foundation - Released under the [MIT license](LICENSE). Ghost and the Ghost Logo are trademarks of Ghost Foundation Ltd. Please see our [trademark policy](https://ghost.org/trademark/) for info on acceptable usage.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvikaspotluri123%2FGhost-CLI.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvikaspotluri123%2FGhost-CLI?ref=badge_large)

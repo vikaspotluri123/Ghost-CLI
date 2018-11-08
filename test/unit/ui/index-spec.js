@@ -281,7 +281,7 @@ describe('Unit: UI', function () {
             }];
 
             const noSpinStub = sinon.stub(ui, 'noSpin').callsFake(fn => fn());
-            const inquirerStub = sinon.stub(ui, 'inquirer').resolves({c: '3', d: '4'});
+            const enquirerStub = sinon.stub(ui, 'enquirer').resolves({c: '3', d: '4'});
 
             return ui.prompt([...defaultPrompts, ...noDefaultPrompts]).then((answers) => {
                 expect(answers).to.deep.equal({
@@ -291,8 +291,8 @@ describe('Unit: UI', function () {
                     d: '4'
                 });
                 expect(noSpinStub.calledOnce).to.be.true;
-                expect(inquirerStub.calledOnce).to.be.true;
-                expect(inquirerStub.calledWithExactly(noDefaultPrompts)).to.be.true;
+                expect(enquirerStub.calledOnce).to.be.true;
+                expect(enquirerStub.calledWithExactly(noDefaultPrompts)).to.be.true;
             });
         });
 
@@ -300,7 +300,7 @@ describe('Unit: UI', function () {
             const ui = new UI();
             ui.allowPrompt = true;
             const noSpinStub = sinon.stub(ui, 'noSpin').callsFake(fn => fn());
-            const inquirerStub = sinon.stub(ui, 'inquirer').resolves();
+            const enquirerStub = sinon.stub(ui, 'enquirer').resolves();
 
             const prompt = {
                 name: 'test',
@@ -310,8 +310,8 @@ describe('Unit: UI', function () {
 
             return ui.prompt(prompt).then(() => {
                 expect(noSpinStub.calledOnce).to.be.true;
-                expect(inquirerStub.calledOnce).to.be.true;
-                expect(inquirerStub.calledWithExactly(prompt)).to.be.true;
+                expect(enquirerStub.calledOnce).to.be.true;
+                expect(enquirerStub.calledWithExactly(prompt)).to.be.true;
             });
         });
     });

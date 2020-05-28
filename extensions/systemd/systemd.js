@@ -138,6 +138,10 @@ class SystemdProcessManager extends ProcessManager {
             });
     }
 
+    nodeExecPath() {
+        console.log('@todo');
+    }
+
     _precheck() {
         const uid = getUid(this.instance.dir);
 

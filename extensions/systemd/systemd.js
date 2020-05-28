@@ -138,8 +138,13 @@ class SystemdProcessManager extends ProcessManager {
             });
     }
 
-    nodeExecPath() {
-        console.log('@todo');
+    nodeExecContext() {
+	return this.ui.sudo(`systemctl cat ${this.systemdName}`).then(({stdout: contents}) => {
+		const lines = contents.split('\n').filter(line => line.includes('Environment') || line.includes('ExecStart'));
+		const env = lines[0].split('"')[1];
+		const bin = lines[1].split('=')[1].split(' ')[0];
+		return {env, bin};
+	});
     }
 
     _precheck() {

@@ -134,23 +134,6 @@ describe('Unit: Utils: version', function () {
             expect(result).to.equal('3.0.0');
         });
 
-        it('throws if v1 flag specified with v2 custom version, and zip is false', function () {
-            try {
-                checkCustomVersion('2', ['1.0.0', '1.0.1', '1.0.2', '2.0.0'], null, {v1: true, zip: false});
-            } catch (error) {
-                expect(error).to.be.an.instanceof(CliError);
-                expect(error.message).to.contain('v2 or greater');
-                return;
-            }
-
-            expect.fail('expected an error to be thrown');
-        });
-
-        it('ignores v1 flag if zip is true', function () {
-            const result = checkCustomVersion('2', ['1.0.0', '1.0.1', '1.0.2', '2.0.0'], null, {v1: true, zip: true});
-            expect(result).to.equal('2.0.0');
-        });
-
         it('throws if custom version is less than active version', function () {
             try {
                 checkCustomVersion('2.0.0', ['1.0.0', '2.0.0', '2.1.0'], '2.1.0');
@@ -170,18 +153,6 @@ describe('Unit: Utils: version', function () {
     });
 
     describe('checkActiveVersion', function () {
-        it('throws if --v1 is passed and active version is >= 2.0', function () {
-            try {
-                checkActiveVersion('2.0.0', '2.1.0', '1.0.0', {v1: true});
-            } catch (error) {
-                expect(error).to.be.an.instanceof(CliError);
-                expect(error.message).to.contain('v2 or greater');
-                return;
-            }
-
-            expect.fail('expected an error to be thrown');
-        });
-
         it('returns null if --force is not passed and active === latest', function () {
             const result = checkActiveVersion('2.1.0', '2.1.0');
             expect(result).to.be.null;
@@ -260,21 +231,6 @@ describe('Unit: Utils: version', function () {
             const result = await resolveVersion();
 
             expect(result).to.be.null;
-        });
-
-        it('returns latest v1 if --v1 and no custom/active version', async function () {
-            loadVersions.resolves({
-                latest: '2.0.0',
-                latestMajor: {
-                    v1: '1.0.0',
-                    v2: '2.0.0'
-                },
-                all: ['2.0.0', '1.0.0'],
-                deprecations: {}
-            });
-
-            const result = await resolveVersion(null, null, {v1: true});
-            expect(result).to.equal('1.0.0');
         });
 
         it('returns latest if no custom/active version', async function () {
